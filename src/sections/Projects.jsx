@@ -5,31 +5,51 @@ const skills = ["react", "javascript", "css3", "html5"];
 const projectData = [
   {
     id: 1,
+    title: "Inventory Management App",
+    icon: <Store />,
+    description:
+      "A full-stack inventory management application inspired by RuneScape. Users can browse items by category and perform full CRUD operations on inventory items using a relational database.",
+    tech: ["nodejs", "express", "postgresql", "ejs", "bootstrap"],
+    github: "https://github.com/holyparas/runescape-inventory", // update if different
+    live: "https://runescape-inventory.onrender.com/",
+  },
+  {
+    id: 2,
+    title: "Full-Stack Blog Platform",
+    icon: <FileText />,
+    description:
+      "A decoupled blog platform with separate public and author dashboards. Authors can create and publish posts via a protected interface, while public users can read posts and leave comments.",
+    tech: ["react", "tailwindcss", "nodejs", "express", "postgresql"],
+    github: "https://github.com/holyparas/blog-frontend-public", // update if different
+    live: "https://blogpublictop.netlify.app/",
+  },
+  {
+    id: 3,
     title: "Fake Store",
     icon: <Store />,
     description:
-      "A simple e-commerce web app that fetches products from the Fake Store API. Users can browse products, view details, and manage a shopping cart — built with reusable components and routing.",
-    tech: skills,
+      "A simple e-commerce web app that fetches products from an external API. Users can browse products, view details, and manage a shopping cart using reusable React components.",
+    tech: ["react", "javascript", "css3", "html5"],
     github: "https://github.com/holyparas/platzi-fake-store",
     live: "https://fakestoreparas.netlify.app/",
   },
   {
-    id: 2,
+    id: 4,
     title: "CV Generator",
     icon: <FileText />,
     description:
-      "A React-based CV generator that lets users input personal information, education, and work experience to dynamically generate a clean, printable resume.",
-    tech: skills,
+      "A React-based CV generator that dynamically renders a clean, printable resume from user-provided personal, education, and work experience data.",
+    tech: ["react", "javascript", "css3", "html5"],
     github: "https://github.com/holyparas/cv-generator",
     live: "https://parascvgenerator.netlify.app/",
   },
   {
-    id: 3,
+    id: 5,
     title: "Memory Game",
     icon: <Brain />,
     description:
-      "A fun and interactive memory matching game built with JavaScript, HTML, and CSS. Players flip cards to match pairs, testing memory and attention.",
-    tech: skills,
+      "An interactive memory matching game built with vanilla JavaScript. Players flip cards to match pairs, testing memory and attention.",
+    tech: ["javascript", "html5", "css3"],
     github: "https://github.com/holyparas/MemoryGame",
     live: "https://memorygameparas.netlify.app/",
   },
@@ -50,7 +70,9 @@ const Projects = () => {
           >
             <div className="flex items-center gap-4 text-3xl md:text-5xl mb-2 text-white">
               <p className="text-yellow-400">{project.id}</p>
-              <h2>{project.title}</h2>
+              <a href={project.live} target="_blank" rel="noreferrer">
+                <h2>{project.title}</h2>
+              </a>
               {project.icon}
             </div>
 
@@ -59,12 +81,24 @@ const Projects = () => {
             <div className="flex justify-between items-center">
               <div className="flex gap-2">
                 {project.tech.map((tech, index) => (
-                  <img
-                    key={index}
-                    src={`logos/${tech}.svg`}
-                    alt={tech}
-                    className="w-8"
-                  />
+                  <div key={index} className="relative group">
+                    <img
+                      src={`logos/${tech}.svg`}
+                      alt={tech}
+                      className="w-8 cursor-pointer hover:scale-110 transition brightness-75 invert"
+                    />
+                    <span
+                      className="
+                        absolute -top-8 left-1/2 -translate-x-1/2
+                        bg-black text-white text-xs px-2 py-1 rounded
+                        opacity-0 group-hover:opacity-100
+                        transition
+                        whitespace-nowrap
+                      "
+                    >
+                      {tech.toUpperCase()}
+                    </span>
+                  </div>
                 ))}
               </div>
 
