@@ -5,16 +5,6 @@ const skills = ["react", "javascript", "css3", "html5"];
 const projectData = [
   {
     id: 1,
-    title: "Inventory Management App",
-    icon: <Store />,
-    description:
-      "A full-stack inventory management application inspired by RuneScape. Users can browse items by category and perform full CRUD operations on inventory items using a relational database.",
-    tech: ["nodejs", "express", "postgresql", "ejs", "bootstrap"],
-    github: "https://github.com/holyparas/runescape-inventory", // update if different
-    live: "https://runescape-inventory.onrender.com/",
-  },
-  {
-    id: 2,
     title: "Full-Stack Blog Platform",
     icon: <FileText />,
     description:
@@ -24,7 +14,27 @@ const projectData = [
     live: "https://blogpublictop.netlify.app/",
   },
   {
+    id: 2,
+    title: "Runescape Management App",
+    icon: <Store />,
+    description:
+      "A full-stack inventory management application inspired by RuneScape. Users can browse items by category and perform full CRUD operations on inventory items using a relational database.",
+    tech: ["nodejs", "express", "postgresql", "ejs", "bootstrap"],
+    github: "https://github.com/holyparas/runescape-inventory", // update if different
+    live: "https://runescape-inventory.onrender.com/",
+  },
+  {
     id: 3,
+    title: "Financial Dashboard Backend",
+    icon: <FileText />,
+    description:
+      "A backend system for a financial dashboard with secure JWT authentication and role-based access control. Designed RESTful APIs and aggregation queries to generate financial summaries and insights.",
+    tech: ["nodejs", "express", "postgresql", "jwt"],
+    github: "https://github.com/holyparas/finance-dashboard", // update if needed
+  },
+
+  {
+    id: 4,
     title: "Fake Store",
     icon: <Store />,
     description:
@@ -34,7 +44,7 @@ const projectData = [
     live: "https://fakestoreparas.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "CV Generator",
     icon: <FileText />,
     description:
@@ -44,7 +54,7 @@ const projectData = [
     live: "https://parascvgenerator.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Memory Game",
     icon: <Brain />,
     description:
